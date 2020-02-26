@@ -1,7 +1,7 @@
 version: "2"
 services:
   app:
-    container_name: app-a8 
+    container_name: MFEC_A8 
     build:
       context: ../
       dockerfile: deployments/Dockerfile

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# This script verifies if SecDevLabs app has properly start-up.
+# This script verifies if MFEC_A8 app has properly start-up.
 #
 
 COLOR_RED='\033[31m'
@@ -9,12 +9,12 @@ COLOR_GREEN='\033[32m'
 COLOR_BLUE='\033[1;34m'
 COLOR_RESET='\033[0m'
 
-PROJECT="A8 - Amarelo Designs"
+PROJECT="A8 - MFEC Deserialization"
 PORT=10008
 TRIES=480
 LOADING=0
 
-printf "${COLOR_YELLOW}SecDevLabs: 👀  Your app is starting!\n${COLOR_RESET}"
+printf "${COLOR_YELLOW}MFEC_A8: 👀  Your app is starting!\n${COLOR_RESET}"
 
 while : ; do
     `curl -s -f http://localhost:$PORT > /dev/null`
@@ -32,33 +32,33 @@ while : ; do
         LOADING=0
     fi
     if [ $LOADING == 0 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (*-------) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (*-------) ${COLOR_RESET}"
     elif [ $LOADING == 1 ]; then
-	    printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (-*------) ${COLOR_RESET}"
+	    printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (-*------) ${COLOR_RESET}"
     elif [ $LOADING == 2 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (--*-----) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (--*-----) ${COLOR_RESET}"
     elif [ $LOADING == 3 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (---*----) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (---*----) ${COLOR_RESET}"
     elif [ $LOADING == 4 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (----*---) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (----*---) ${COLOR_RESET}"
     elif [ $LOADING == 5 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (-----*--) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (-----*--) ${COLOR_RESET}"
     elif [ $LOADING == 6 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (------*-) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (------*-) ${COLOR_RESET}"
     elif [ $LOADING == 7 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (-------*) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (-------*) ${COLOR_RESET}"
     elif [ $LOADING == 8 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (------*-) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (------*-) ${COLOR_RESET}"
     elif [ $LOADING == 9 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (-----*--) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (-----*--) ${COLOR_RESET}"
     elif [ $LOADING == 10 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (----*---) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (----*---) ${COLOR_RESET}"
     elif [ $LOADING == 11 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (---*----) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (---*----) ${COLOR_RESET}"
     elif [ $LOADING == 12 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (--*-----) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (--*-----) ${COLOR_RESET}"
     elif [ $LOADING == 13 ]; then
-        printf "\r${COLOR_YELLOW}SecDevLabs: 👀  Your app is still starting... (-*------) ${COLOR_RESET}"
+        printf "\r${COLOR_YELLOW}MFEC_A8: 👀  Your app is still starting... (-*------) ${COLOR_RESET}"
     fi
     LOADING=$((LOADING+1))
     # End of loading animation
@@ -66,7 +66,7 @@ while : ; do
 done
 
 if [ $TRIES == 0 ]; then
-    printf "\n${COLOR_RED}SecDevLabs: Ooops! Something went wrong, please check api details for more information!\n${COLOR_RESET}"
+    printf "\n${COLOR_RED}MFEC_A8: Ooops! Something went wrong, please check api details for more information!\n${COLOR_RESET}"
 else
-    printf "\n${COLOR_GREEN}SecDevLabs: 🔥  ${PROJECT} is now running at ${COLOR_RESET}${COLOR_BLUE}http://localhost:$PORT${COLOR_RESET}\n"
+    printf "\n${COLOR_GREEN}MFEC_A8: 🔥  ${PROJECT} is now running at ${COLOR_RESET}${COLOR_BLUE}http://localhost:$PORT${COLOR_RESET}\n"
 fi
